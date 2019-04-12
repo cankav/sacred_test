@@ -5,10 +5,10 @@ from sklearn import svm, datasets, model_selection
 ex = Experiment("svm")
 
 ex.observers.append(
-    FileStorageObserver.create("my_runs")
+    FileStorageObserver.create("results")
 )
 
-@ex.config  # Configuration is defined through local variables.
+@ex.config
 def cfg():
     C = 1.0
     gamma = 0.7
