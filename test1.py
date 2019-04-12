@@ -4,10 +4,6 @@ from sklearn import svm, datasets, model_selection
 
 ex = Experiment("svm")
 
-ex.observers.append(
-    FileStorageObserver.create("results")
-)
-
 @ex.config
 def cfg():
     C = 1.0
