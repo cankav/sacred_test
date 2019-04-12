@@ -27,7 +27,7 @@ def run_cross_val(kernel, test_size, random_state):
         X, y, test_size=test_size,
         random_state=random_state)
 
-    clf = svm.SVC(kernel=kernel, C=1)
+    clf = svm.SVC(kernel=kernel, C=1, gamma='auto')
     scores = cross_val_score(clf, X_train, y_train, cv=5)
     print(scores)
     for score in scores:
