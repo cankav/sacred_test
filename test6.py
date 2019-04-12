@@ -8,8 +8,14 @@ from sklearn.model_selection import cross_val_score
 ex = Experiment("svm")
 
 @ex.config
-def cfg():
+def linear_cfg():
     kernel='linear'
+    test_size=0.4
+    random_state=0
+
+@ex.named_config
+def rbf_cfg():
+    kernel='rbf'
     test_size=0.4
     random_state=0
 
